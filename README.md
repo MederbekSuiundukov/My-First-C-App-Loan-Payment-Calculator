@@ -34,8 +34,7 @@ The app calculates monthly loan payments and generates a full amortization sched
 
 ```
 MyFirstC#App/
- ├── main.cs<img width="581" height="175" alt="Снимок экрана 2025-12-11 в 20 14 41" src="https://github.com/user-attachments/assets/2efa7378-e04f-4bf5-b9bf-9907d9fb0303" />
-
+ ├── main.cs
  ├── loans_summary.csv
  ├── loan_schedule.csv
  └── README.md
