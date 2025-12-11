@@ -1,111 +1,67 @@
-# MBANK Currency Converter (Console App)
+# **Loan Payment Calculator (Console App)**
 
-MBANK is a C# console application that demonstrates core programming concepts  
-(arrays, strings, OOP, conditionals, loops, file handling) through a real-world task:  
-a multi-currency converter with logging, persistent storage, and an admin panel.
-
-The app simulates a banking system where KGS (Kyrgyz Som) is the base currency,  
-and all other currencies are stored relative to KGS.
+Loan Payment Calculator is a C# console application that demonstrates core programming concepts: **OOP, arrays, strings, loops, conditionals, mathematical logic, and file handling**.
+The app calculates monthly loan payments and generates a full amortization schedule with CSV export.
 
 ---
 
-## 1. Key Features
+## **1. Key Features**
 
-- Console-based currency converter with a clear text UI  
-- Base currency = KGS (Kyrgyz Som), stored in a separate file  
-- Conversion history is logged to a file and persists between runs  
-- Supports multiple currencies (USD, EUR, GBP, JPY, RUB, KZT, CNY, TRY, AZN, UZS, etc.)  
-- Admin panel with password protection:  
-  - Add new currency  
-  - Remove existing currency (except KGS)  
-- Persistent storage:  
-  - Currencies stored in a CSV file  
-  - Base currency stored in a separate file  
-  - Conversion logs stored in a dedicated file  
-- User-friendly navigation:  
-  - Clear main menu  
-  - Ability to return to the previous screen using `BACK`  
-- Colored console output for improved readability  
-  - Green – success and application banner  
-  - Red – errors  
-  - Cyan – menus and tables  
-  - Yellow – log records and prompts  
-  - DarkGray – extended hints/help
+* Calculates monthly annuity payments
+* Shows total paid amount and total interest
+* Displays first 6 months of the repayment schedule
+* Saves data into CSV files:
 
-This project is suitable as a course assignment to demonstrate:
-- functionality  
-- code quality  
-- use of core C# concepts  
-- mathematical/logical reasoning  
-- documentation  
-- creativity  
+  * `loans_summary.csv` — loan summary
+  * `loan_schedule.csv` — full amortization table
+* Supports multiple loans (data is appended, not overwritten)
 
 ---
 
-## 2. Technologies Used
+## **2. C# Concepts Demonstrated**
 
-- Language: C#  
-- Runtime: .NET (e.g., .NET 8.0 or similar)  
-- Type: Console Application  
-- Concepts demonstrated:
-  - Object-Oriented Programming  
-    - classes: `CurrencyRate`, `CurrencyConverter`, `ConversionLogger`, `Program`  
-  - Arrays (initial default rates)  
-  - Lists and collections  
-  - String operations and parsing  
-  - Conditional logic (if/else)  
-  - Loops (for, foreach, while)  
-  - File handling (File, StreamWriter, Directory)  
-  - Mathematical conversion logic using a base currency model  
+* **OOP**: `Loan`, `Payment`, `LoanFileStorage`, `Program`
+* **Arrays**: amortization stored in `Payment[]`
+* **String formatting** (CSV output)
+* **Loops** (`for`, `while`)
+* **Conditionals** (`if/else`)
+* **File handling** (`File`, `StreamWriter`)
+* **Mathematical logic** for financial calculations
 
 ---
 
+## **3. Project Structure**
 
-## Installation
+```
+MyFirstC#App/
+ ├── main.cs<img width="581" height="175" alt="Снимок экрана 2025-12-11 в 20 14 41" src="https://github.com/user-attachments/assets/2efa7378-e04f-4bf5-b9bf-9907d9fb0303" />
 
-1. Clone this repository:
-   git clone https://github.com/argenkuz/My-First-C-App-Currency-converter-
-
-2. Navigate into the project folder:
-   cd Program.cs
-
-3. Build the application:
-   dotnet build
-
-4. Run the application:
-   dotnet run
+ ├── loans_summary.csv
+ ├── loan_schedule.csv
+ └── README.md
+```
 
 ---
 
-## Error Handling
+## **4. How the  System Works**
+## Command 1 (add new loan)
+<img width="597" height="346" alt="Снимок экрана 2025-12-11 в 20 09 55" src="https://github.com/user-attachments/assets/f67161d0-ddec-499e-bcf1-58426790cd27" />
 
-The program includes robust error-checking logic to ensure data integrity and correct usage. The system prevents:
+we write name , amount ,rate and term. After we get:
+* Monthly payment
+* Total paid
+* Total interest
 
-- entering negative amounts  
-- using unsupported or unknown currency codes  
-- removing the base currency (KGS), which is protected  
-- entering invalid exchange rates  
-- entering non-numeric values where numeric input is required  
-- attempting to add duplicate currency codes  
-- entering currency codes with special characters or numbers  
-- entering blank inputs in mandatory fields  
-- unauthorized access to admin features (password required)  
-- providing invalid format for exchange rate values  
+Show first 6 months?
+Show monthly payments. 
+Save full schedule?
+Sawing in csv.
 
-If an error occurs, the program:
-
-- displays a clear message in red
-- explains what caused the issue
-- guides the user to retry the input
-- never crashes or exits unexpectedly
-- always allows returning to the main menu using `BACK`
 
 ---
+## Command 2 (show where located our csv files)
+![Uploading Снимок экрана 2025-12-11 в 20.14.41.png…]()
 
-## 3. How the Currency System Works
 
-### 3.1 Base Currency: KGS (Som)
-
-- The base currency is KGS (Kyrgyz Som).  
 
 
